@@ -1,5 +1,5 @@
 const webpack = require('webpack');
-// const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const path = require('path');
 
 module.exports = {
   entry: [
@@ -18,14 +18,26 @@ module.exports = {
         exclude: /node_modules/,
         use: ['babel-loader', 'eslint-loader'],
       },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+      },
+      {
+        test: /\.woff|.woff2|.ttf|.eot|.svg|.png|.jpg*.*$/,
+        use: ['file-loader'],
+      },
     ],
   },
   resolve: {
     extensions: ['*', '.js', '.jsx'],
+    modules: [
+      path.resolve(__dirname, 'src'),
+      path.resolve(__dirname, 'node_modules'),
+    ],
     alias: {
-      modules: `${__dirname}/node_modules`,
-      jquery: 'modules/jquery/dist/jquery.min.js',
-      bootstrap: 'modules/bootstrap/dist/js/bootstrap.min.js',
+      modules: path.resolve(__dirname, 'node_modules'),
+      jquey: path.resolve(__dirname, 'node_modules/jquery/dist/jquery.min.js'),
+      bootstrap: path.resolve(__dirname, 'node_modules/bootstrap/dist/js/bootstrap.min.js'),
     },
   },
   plugins: [

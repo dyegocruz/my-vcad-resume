@@ -5,13 +5,13 @@ import 'modules/simple-line-icons/css/simple-line-icons.css';
 
 import React from 'react';
 import Container from './Container';
-import './assets/css/app.css';
+import './assets/scss/app.scss';
 
-import Nav from './Nav';
+import NavBar from './NavBar';
 
 export default () => (
   <div>
-    <Nav />
+    <NavBar />
     <Container />
   </div>
 );

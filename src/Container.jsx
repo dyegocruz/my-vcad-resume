@@ -6,7 +6,7 @@ export default () => (
     <Section variant="resume-section p-3 p-lg-5 d-flex d-column" id="about">
       <div className="my-auto">
         <h1 className="mb-0">Clarence
-          <span className="text-primary">Taylor</span>
+          <span className="text-primary-custom">Taylor</span>
         </h1>
         <div className="subheading mb-5">3542 Berry Street · Cheyenne Wells, CO 80810 · (317) 585-8468 ·
           <a href="mailto:name@email.com">name@email.com</a>

@@ -5,33 +5,48 @@
 
 // Overriding and custom main template
 
-.color-1 { background: #7e6df6; } // Deep Purple
-.color-2 { background: #F44336; } // Red */
-.color-3 { background: #2196F3; } // Blue */
-.color-4 { background: #FF5722; } // Deep Orange */
-.color-5 { background: #2eca7f; } // Green */
-.color-6 { background: #29B6F6; } // Light Blue */
-.color-7 { background: #E91E63; } // Pink */
-.color-8 { background: #AA00FF; } // Purple */
-.color-9 { background: #FF9800; } // Orange */
-.color-10 { background: #FBC02D; } // Amber */
-.color-11 { background: #1fdf1f; } // Lime */
-.color-12 { background: #26d9ac; } // Teal */
+/*------- Defaults -------*/
 
-$main-color: #1fdf1f;;
+$color-1: #1fdf1f; // Lime
+$color-2: #AA00FF; // Purple
 
-.main-color {
-  color: $main-color;
+/*------- Functions -------*/
+
+@mixin transition ($value) {
+  -webkit-transition-duration: $value;
+  transition-duration: $value;
 }
 
-.text-primary-custom {
-  color: $main-color;
+%commonTransition {
+  @include transition(0.3s);
+  &:hover,
+  &:focus,
+  &:active {
+    color: darken($color-1, 15%);
+  }
+}
+
+a {
+  @extend %commonTransition;
 }
 
 .navbar-dark {
   .navbar-nav {
     .nav-link {
-      color: rgba(255,255,255,.8);
+      color: rgba(255, 255, 255, .8);
+      @extend %commonTransition;
     }
   }
+}
+
+.container-fluid {
+  .list-social-icons {
+    a {
+      @extend %commonTransition;
+    }
+  }
+}
+
+.devicons {
+  @extend %commonTransition;
 }

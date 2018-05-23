@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default () => (
-  <nav className="navbar navbar-expand-lg navbar-dark color-11 fixed-top" id="sideNav">
+  <nav className="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
     <a className="navbar-brand js-scroll-trigger" href="#page-top">
       <span className="d-block d-lg-none">Start Bootstrap</span>
       <span className="d-none d-lg-block">

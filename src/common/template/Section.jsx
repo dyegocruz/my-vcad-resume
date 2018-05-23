@@ -5,9 +5,7 @@ class Section extends React.PureComponent {
     const { variant, id, children } = this.props;
     return (
       <section className={variant} id={id}>
-        <div className="my-auto">
-          {children}
-        </div>
+        {children}
       </section>
     );
   }

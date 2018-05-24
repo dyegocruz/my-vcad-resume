@@ -7,10 +7,13 @@ import React from 'react';
 import './assets/scss/app.scss';
 import NavBar from './main/NavBar';
 import Container from './main/Container';
+import Fire from './Fire';
+
+const test = async () => Fire.ref('myvcard').once('value', snap => snap.val());
 
 export default () => (
   <div>
     <NavBar />
-    <Container />
+    <Container test={test()} />
   </div>
 );

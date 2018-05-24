@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+
 import Section from '../common/template/Section';
 import About from './About';
 import Experience from './Experience';
@@ -6,28 +9,33 @@ import Education from './Education';
 import Skills from './Skills';
 import Interests from './Interests';
 import Awards from './Awards';
-import Fire from '../Fire';
+import getMyVcardData, { getCardViewFromState } from './MyVcardAction';
 
 class Container extends Component {
-  componentWillMount() {
-    Fire.database().ref('myvcard').once('value')
-      .then((snapshot) => {
-        // ******** This method is straight from their docs ********
-        // ******** It returns whatever is found at the path
-        // xxxxx/users/user.uid ********
-        const vcard = snapshot.val();
-        console.log(' FOUND THIS USER FROM THE DB', vcard);
-        // now dispatch whatever redux store action you have to store the user
-        // information
-        // dispatch(userSet(vcard))
-      })
-      .catch(err => console.log(err));
+  // async componentDidMount() {
+  //   const test = await this.props.getMyVcardData();
+  //   console.log(test);
+  // }
+
+  async componentWillMount() {
+    // this.props.getMyVcardData();
+    console.log(this.props.test);
   }
 
   render() {
+    // const { about } = this.props.myVcard;
+    console.log(this.props.myVcard);
+    const { myVcard } = this.props;
+    // if (myVcard == null) {
+    //   return <div>Loading...</div>;
+    // }
     return (
       <div className="container-fluid p-0">
         <Section variant="resume-section p-3 p-lg-5 d-flex d-column" id="about">
+          { myVcard &&
+            <h1>{myVcard.about.name}</h1>
+          }
+          LALLALAL
           <About />
         </Section>
 
@@ -55,4 +63,8 @@ class Container extends Component {
   }
 }
 
-export default Container;
+const mapStateToProps = state => ({ myVcard: getCardViewFromState(state) });
+
+const mapDispatchToProps = dispatch => bindActionCreators({ getMyVcardData }, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(Container);

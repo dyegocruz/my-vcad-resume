@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
-import { firebaseReducer } from 'react-redux-firebase';
+import { firebaseStateReducer } from 'react-redux-firebase';
 import MyVcardReducer from './main/MyVcardReducer';
 
 const rootReducer = combineReducers({
   mainReducer: MyVcardReducer,
-  firabase: firebaseReducer,
+  firabase: firebaseStateReducer,
 });
 
 export default rootReducer;

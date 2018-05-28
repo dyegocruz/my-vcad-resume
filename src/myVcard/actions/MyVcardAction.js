@@ -18,14 +18,6 @@ function getMyVcardAction(myVcard) {
   };
 }
 
-// export default function getMyVcardData() {
-//   // const request = axios.get('https://api.github.com/users/dyegocruz');
-//   // return {
-//   //   type: 'MYVCARD_DATA_FETCHED',
-//   //   payload: request,
-//   // };
-// }
-
 export default function getMyVcardData() {
   return async (dispatch, getState, getFireBase) => {
     dispatch(getMyVcardRequestedAction());

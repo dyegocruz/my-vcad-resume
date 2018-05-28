@@ -12,6 +12,16 @@ class Skills extends Component {
     ));
   }
 
+  renderWorkFlow() {
+    const list = this.props.skills.workflow || [];
+    return list.map(item => (
+      <li key={item.id}>
+        <Icon type="fa" icon="check" />
+        {item.title}
+      </li>
+    ));
+  }
+
   render() {
     return (
       <div className="my-auto">
@@ -24,22 +34,7 @@ class Skills extends Component {
 
         <div className="subheading mb-3">Workflow</div>
         <ul className="fa-ul mb-0">
-          <li>
-            <Icon type="fa" icon="check" />
-            Mobile-First, Responsive Design
-          </li>
-          <li>
-            <Icon type="fa" icon="check" />
-            Cross Browser Testing &amp; Debugging
-          </li>
-          <li>
-            <Icon type="fa" icon="check" />
-            Cross Functional Teams
-          </li>
-          <li>
-            <Icon type="fa" icon="check" />
-            Agile Development &amp; Scrum
-          </li>
+          {this.renderWorkFlow()}
         </ul>
       </div>
     );

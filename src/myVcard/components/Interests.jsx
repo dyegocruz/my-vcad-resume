@@ -1,9 +1,25 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-export default () => (
-  <div className="my-auto">
-    <h2 className="mb-5">Interests</h2>
-    <p>Apart from being a web developer, I enjoy most of my time being outdoors. In the winter, I am an avid skiier and novice ice climber. During the warmer months here in Colorado, I enjoy mountain biking, free climbing, and kayaking.</p>
-    <p className="mb-0">When forced indoors, I follow a number of sci-fi and fantasy genre movies and television shows, I am an aspiring chef, and I spend a large amount of my free time exploring the latest technolgy advancements in the front-end web development world.</p>
-  </div>
-);
+class Interests extends Component {
+  renderInterests() {
+    const list = this.props.interests || [];
+    return list.map(interest => (
+      <li key={Math.random()}>{interest}</li>
+    ));
+  }
+
+  render() {
+    return (
+      <div className="my-auto">
+        <h2 className="mb-5">Interests</h2>
+        <ul>
+          {this.renderInterests()}
+        </ul>
+      </div>
+    );
+  }
+}
+
+const mapStateToProps = state => ({ interests: state.myVcardReducer.myVcard.interests });
+export default connect(mapStateToProps)(Interests);

@@ -1,42 +1,24 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-// import _ from 'lodash';
-// import Fire from '../Fire';
+import _ from 'lodash';
 
-import Section from '../common/template/Section';
+import Section from '../../common/template/Section';
 import About from './About';
 import Experience from './Experience';
 import Education from './Education';
 import Skills from './Skills';
 import Interests from './Interests';
-import Awards from './Awards';
-import getMyVcardData from './MyVcardAction';
+import Courses from './Courses';
+import getMyVcardData from '../actions/MyVcardAction';
 
 class Content extends Component {
-  // async componentDidMount() {
-  //   const test = await this.props.getMyVcardData();
-  //   console.log(test);
-  // }
   componentDidMount() {
-    // return t.then(f => f.val());
-    // await Fire
-    //   .ref('myvcard').once('value')
-    //   .then((snap) => {
-    //     console.log(snap.val());
-    //   });
     this.props.getMyVcardData();
-    // console.log(this.props.test);
   }
 
   render() {
-    // const { about } = this.props.myVcard;
-    console.log(this.props);
-    // const { myVcard } = this.props;
-    // if (myVcard == null) {
-    //   return <div>Loading...</div>;
-    // }
-    // if (_.isEmpty(this.props.myVcard.about)) return null;
+    if (_.isEmpty(this.props.myVcard.about)) return null;
     return (
       <div className="Content-fluid p-0">
         <Section variant="resume-section p-3 p-lg-5 d-flex d-column" id="about">
@@ -60,13 +42,13 @@ class Content extends Component {
         </Section>
 
         <Section variant="resume-section p-3 p-lg-5 d-flex d-column" id="awards">
-          <Awards />
+          <Courses />
         </Section>
       </div>
     );
   }
 }
 
-const mapStateToProps = state => ({ myVcard: state.mainReducer.myVcard });
+const mapStateToProps = state => ({ myVcard: state.myVcardReducer.myVcard });
 const mapDispatchToProps = dispatch => bindActionCreators({ getMyVcardData }, dispatch);
 export default connect(mapStateToProps, mapDispatchToProps)(Content);

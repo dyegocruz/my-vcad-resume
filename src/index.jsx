@@ -3,13 +3,14 @@ import ReactDOM from 'react-dom';
 import { applyMiddleware, createStore, compose } from 'redux';
 import { Provider } from 'react-redux';
 import { reactReduxFirebase, getFirebase } from 'react-redux-firebase';
-import firebase from 'firebase';
+import firebase from 'firebase/app';
+import 'firebase/database';
 import promise from 'redux-promise';
 import multi from 'redux-multi';
 import thunk from 'redux-thunk';
 
-import reducers from './reducers';
-import App from './App';
+import reducers from './myVcard/main/reducers';
+import App from './myVcard/main/App';
 import env from '../.env.local';
 
 const firebaseConfig = { /* COPY THE ACTUAL CONFIG FROM FIREBASE CONSOLE */
@@ -25,13 +26,13 @@ const rrfConfig = {
   userProfile: 'users', // automatically manage profile
 };
 
-// // initialize firebase instance
+// initialize firebase instance
 firebase.initializeApp(firebaseConfig); // <- new to v2.*.*
 
-// // Add reduxReduxFirebase enhancer when making store creator
+// Add reduxReduxFirebase enhancer when making store creator
 const createStoreWithFirebase = compose(reactReduxFirebase(firebase, rrfConfig))(createStore);
 
-// // Create store with reducers and initial state
+// Create store with reducers and initial state
 const initialState = {};
 const store =
 createStoreWithFirebase(
@@ -41,10 +42,7 @@ createStoreWithFirebase(
 );
 
 // const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
-// const store = applyMiddleware(
-//   thunk.withExtraArgument(getFirebase),
-//   multi, promise,
-// )(createStore)(reducers);
+// const store = applyMiddleware(thunk, promise, multi)(createStore)(reducers);
 ReactDOM.render(
   <Provider store={store}>
     <App />

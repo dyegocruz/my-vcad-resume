@@ -5,11 +5,9 @@ import 'modules/simple-line-icons/css/simple-line-icons.css';
 
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import './assets/scss/app.scss';
-import Container from './main/Container';
-// import Fire from './Fire';
 
-// const test = async () => Fire.ref('myvcard').once('value', snap => snap.val());
+import '../../assets/scss/app.scss';
+import Container from '../components/Container';
 
 export default () => (
   <Router>

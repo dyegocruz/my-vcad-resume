@@ -1,5 +1,5 @@
 import firebase from 'firebase';
-import env from '../.env.local';
+import env from '../../../.env.local';
 
 const firebaseConfig = { /* COPY THE ACTUAL CONFIG FROM FIREBASE CONSOLE */
   apiKey: env.firebase.apiKey,

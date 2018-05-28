@@ -1,6 +1,8 @@
 import React from 'react';
 
-export default ({ type, icon, variant }) => {
+export default ({
+  type, icon, variant, title,
+}) => {
   let iconClass = '';
   if (type === 'devicon') {
     iconClass = `devicons devicons-${icon}`;
@@ -11,6 +13,6 @@ export default ({ type, icon, variant }) => {
   }
 
   return (
-    <i className={iconClass} />
+    <i className={iconClass} title={title} />
   );
 };

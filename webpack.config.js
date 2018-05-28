@@ -2,6 +2,14 @@ const webpack = require('webpack');
 const path = require('path');
 
 module.exports = {
+  output: {
+    path: `${__dirname}/build`,
+    publicPath: '/',
+    filename: 'bundle.js',
+  },
+  devServer: {
+    contentBase: './dist',
+  },
   entry: [
     'react-hot-loader/patch',
     'babel-polyfill',
@@ -51,13 +59,8 @@ module.exports = {
       jQuery: 'jquery',
       'window.jQuery': 'jquery',
     }),
+    new webpack.LoaderOptionsPlugin({
+      debug: true,
+    }),
   ],
-  output: {
-    path: `${__dirname}/build`,
-    publicPath: '/',
-    filename: 'bundle.js',
-  },
-  devServer: {
-    contentBase: './dist',
-  },
 };

@@ -10,7 +10,7 @@ import Education from './Education';
 import Skills from './Skills';
 import Interests from './Interests';
 import Courses from './Courses';
-import getMyVcardData from '../actions/MyVcardAction';
+import { getMyVcardData } from '../actions/MyVcardAction';
 
 class Content extends Component {
   componentDidMount() {

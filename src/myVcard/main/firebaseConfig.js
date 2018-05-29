@@ -1,4 +1,4 @@
-import { firebaseEnv } from '../../../.env.local';
+import { firebaseEnv } from './.env.local';
 
 export const rrfConfig = { userProfile: 'users' };
 

@@ -1,24 +1,24 @@
-function getMyVcardRequestedAction() {
+export function getMyVcardRequestedAction() {
   return {
     type: 'MYVCARD_DATA_REQUESTED',
   };
 }
 
-function getMyVcardRejectedAction(error) {
+export function getMyVcardRejectedAction(error) {
   return {
     type: 'MYVCARD_DATA_REJECTED',
     action: error,
   };
 }
 
-function getMyVcardAction(myVcard) {
+export function getMyVcardAction(myVcard) {
   return {
     type: 'MYVCARD_DATA_FETCHED',
     myVcard,
   };
 }
 
-export default function getMyVcardData() {
+export function getMyVcardData() {
   return async (dispatch, getState, getFireBase) => {
     dispatch(getMyVcardRequestedAction());
     const firebase = getFireBase();

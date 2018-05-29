@@ -6,8 +6,6 @@ import 'jquery-easing';
 import 'bootstrap';
 import getGitHubData from '../actions/GitHubAction';
 
-// require('jquery.easing')($);
-
 class NavBar extends Component {
   componentWillMount() {
     this.props.getGitHubData();
@@ -27,7 +25,9 @@ class NavBar extends Component {
       }
       return true;
     });
-    $('.navbar-collapse').collapse('hide');
+    $('.js-scroll-trigger').click(() => {
+      $('.navbar-collapse').collapse('hide');
+    });
   }
 
   render() {
@@ -69,6 +69,6 @@ class NavBar extends Component {
     );
   }
 }
-const mapStateToProps = state => ({ github: state.gitHubReducer.githubData });
+const mapStateToProps = state => ({ github: state.gitHubReducer.gitHubData });
 const mapDispatchToProps = dispatch => bindActionCreators({ getGitHubData }, dispatch);
 export default connect(mapStateToProps, mapDispatchToProps)(NavBar);

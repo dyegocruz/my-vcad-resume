@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { gitHubEnv } from '../main/.env.local';
+import { gitHubEnv } from '../../../.env.local';
 import ActionTypes from '../../common/ActionTypes';
 
 export default function getGitHubData() {

@@ -1,11 +1,33 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import $ from 'jquery';
+import 'jquery-easing';
+import 'bootstrap';
 import getGitHubData from '../actions/GitHubAction';
+
+// require('jquery.easing')($);
 
 class NavBar extends Component {
   componentWillMount() {
     this.props.getGitHubData();
+  }
+
+  componentDidMount() {
+    $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function call() {
+      if (window.location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && window.location.hostname === this.hostname) {
+        let target = $(this.hash);
+        target = target.length ? target : $(`[name=${this.hash.slice(1)}]`);
+        if (target.length) {
+          $('html, body').animate({
+            scrollTop: (target.offset().top),
+          }, 1000, 'easeInOutExpo');
+          return false;
+        }
+      }
+      return true;
+    });
+    $('.navbar-collapse').collapse('hide');
   }
 
   render() {

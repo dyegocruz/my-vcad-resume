@@ -4,11 +4,24 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "lint": "./node_modules/.bin/eslint eslint src/**/*.jsx src/myVcard/**/*.js",
     "start": "webpack-dev-server --progress --colors --inline --hot --mode development",
     "build": "webpack --progress -p",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "nyc": {
+    "functions": 80,
+    "lines": 80,
+    "check-coverage": true,
+    "reporter": ["text", "html"],
+    "exclude": ["tests/**"]
+  },
+  "keywords": [
+    "js",
+    "react",
+    "myvcard",
+    "resume"
+  ],
   "author": "Dyego Cruz <dyegocruz@gmail.com> (https://github.com/dyegocruz)",
   "license": "MIT",
   "devDependencies": {
@@ -23,6 +36,7 @@
     "babel-preset-es2017": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
+    "chai": "^4.1.2",
     "css-loader": "^0.28.11",
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "^16.1.0",
@@ -32,7 +46,10 @@
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.8.2",
     "file-loader": "^1.1.11",
+    "husky": "^0.14.3",
+    "mocha": "^5.2.0",
     "node-sass": "^4.9.0",
+    "nyc": "^11.8.0",
     "react-hot-loader": "^4.2.0",
     "sass-loader": "^7.0.1",
     "style-loader": "^0.21.0",
@@ -48,10 +65,8 @@
     "font-awesome": "^4.7.0",
     "jquery": "^3.3.1",
     "jquery-easing": "0.0.1",
-    "jquery.easing": "^1.4.1",
     "lodash": "^4.17.10",
     "popper.js": "^1.14.3",
-    "prop-types": "^15.6.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "react-redux": "^5.0.7",

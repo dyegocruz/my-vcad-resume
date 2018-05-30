@@ -20,7 +20,7 @@ class Content extends Component {
   render() {
     if (_.isEmpty(this.props.myVcard.about)) return null;
     return (
-      <div className="Content-fluid p-0">
+      <div className="content-fluid p-0">
         <Section variant="resume-section p-3 p-lg-5 d-flex d-column" id="about">
           <About />
         </Section>

@@ -36,7 +36,6 @@ class NavBar extends Component {
 
   render() {
     const { github } = this.props;
-    console.log(this.props);
     return (
       <nav className="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
         <a className="navbar-brand js-scroll-trigger" href="#page-top">

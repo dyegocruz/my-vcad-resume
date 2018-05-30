@@ -9,7 +9,7 @@ export const getGitHubDataRejected = err => (
 
 export const getGitHubDataAction = res => ({
   type: ActionTypes.GITHUB_DATA_FETCHED,
-  payload: res,
+  payload: res.data,
 });
 
 export const getGitHubData = () => (dispatch) => {

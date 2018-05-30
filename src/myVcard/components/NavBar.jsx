@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import $ from 'jquery';
 import 'jquery-easing';
 import 'bootstrap';
-import getGitHubData from '../actions/GitHubAction';
+import { getGitHubData } from '../actions/GitHubAction';
 
 class NavBar extends Component {
   componentWillMount() {

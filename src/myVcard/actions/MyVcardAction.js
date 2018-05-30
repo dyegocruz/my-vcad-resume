@@ -1,19 +1,21 @@
+import ActionTypes from '../../common/ActionTypes';
+
 export function getMyVcardRequestedAction() {
   return {
-    type: 'MYVCARD_DATA_REQUESTED',
+    type: ActionTypes.MYVCARD_DATA_REQUESTED,
   };
 }
 
 export function getMyVcardRejectedAction(error) {
   return {
-    type: 'MYVCARD_DATA_REJECTED',
+    type: ActionTypes.MYVCARD_DATA_REJECTED,
     action: error,
   };
 }
 
 export function getMyVcardAction(myVcard) {
   return {
-    type: 'MYVCARD_DATA_FETCHED',
+    type: ActionTypes.MYVCARD_DATA_FETCHED,
     myVcard,
   };
 }

@@ -1,4 +1,4 @@
-import { getMyVcardRequestedAction, getMyVcardRejectedAction } from '../src/myVcard/actions/MyVcardAction';
+import { getMyVcardRequestedAction, getMyVcardAction, getMyVcardRejectedAction } from '../src/myVcard/actions/MyVcardAction';
 import ActionTypes from '../src/common/ActionTypes';
 
 describe('MyVcard Actions', () => {
@@ -16,10 +16,10 @@ describe('MyVcard Actions', () => {
     expect(getMyVcardRejectedAction()).toEqual(expectedAction);
   });
 
-  it('Should create an action to reject Vcard Data', () => {
+  it('Should create an action to fetched Vcard Data', () => {
     const expectedAction = {
       type: ActionTypes.MYVCARD_DATA_FETCHED,
     };
-    expect(getMyVcardRejectedAction()).toEqual(expectedAction);
+    expect(getMyVcardAction()).toEqual(expectedAction);
   });
 });

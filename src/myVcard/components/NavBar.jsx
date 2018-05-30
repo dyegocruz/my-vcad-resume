@@ -28,6 +28,10 @@ class NavBar extends Component {
     $('.js-scroll-trigger').click(() => {
       $('.navbar-collapse').collapse('hide');
     });
+
+    $('body').scrollspy({
+      target: '#sideNav',
+    });
   }
 
   render() {

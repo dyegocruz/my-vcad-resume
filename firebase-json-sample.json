@@ -1,0 +1,71 @@
+{
+  "myvcard" : {
+    "about" : {
+      "cellPhone" : "",
+      "emailAddress" : "",
+      "firstName" : "",
+	  "lastName" : "",
+      "formattedName" : "",
+      "headline" : "Full Stack Developer",
+      "location" : {
+        "country" : {
+          "code" : "br"
+        },
+        "name" : "Fortaleza Area, Brazil"
+      },
+      "social" : [
+		{
+			"id": 1,
+			"icon": "facebook",
+			"title": "Facebook",
+			"url": "http://facebook.com/user"
+		}
+	  ],
+      "summary" : "Your resume to show."
+    },
+	"education": [
+		{
+			"id": 1,
+			"institution": "Universidade Estadual do Ceará (UECE)",
+			"degree": "Graduated Degree",
+			"courseName": "Software Engineering with DevOps",
+			"fromYear": "2017",
+			"toYear": "2019"
+		}
+	],
+    "positions" : [
+		{
+			"id" : 1,
+			"company" : "IVIA",
+			"title": "Full Stack Developer",
+			"isCurrent" : true,
+			"startDate" : {
+			  "month" : "June",
+			  "year" : 2015
+			},
+			"summary" : [
+				"It can be just one or more elements on this array."
+			],
+			"environment": "JavaScript, Node JS, React, Redux... what technologies you work on this company"
+		}
+	],
+    "skills" : {
+      "languageTools" : [ {
+		"id": 1,
+        "icon" : "javascript",
+        "title" : "Javascript"
+      } ],
+      "workflow" : [
+		"Grunt for task-running"
+	  ]
+    },
+	"courses": [
+		{
+			"id": 1,
+			"name": "",
+			"year": 2009,
+			"institution": ""
+		}
+	]
+  }
+}

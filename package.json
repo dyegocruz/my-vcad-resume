@@ -79,6 +79,7 @@
     "popper.js": "^1.14.3",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
+    "react-ga": "^2.5.3",
     "react-redux": "^5.0.7",
     "react-redux-firebase": "^2.1.4",
     "react-router": "^4.2.0",

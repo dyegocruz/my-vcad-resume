@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import $ from 'jquery';
 import 'jquery-easing';
 import 'bootstrap';
+import ReactGA from 'react-ga';
 import { getGitHubData } from '../actions/GitHubAction';
 
 class NavBar extends Component {
@@ -34,6 +35,13 @@ class NavBar extends Component {
     });
   }
 
+  handleClick() {
+    ReactGA.event({
+      category: 'Navigation',
+      action: 'Clicked Link',
+    });
+  }
+
   render() {
     const { github } = this.props;
     return (
@@ -50,22 +58,22 @@ class NavBar extends Component {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <a className="nav-link js-scroll-trigger" href="#about">About</a>
+              <a className="nav-link js-scroll-trigger" onClick={() => this.handleClick()} href="#about">About</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link js-scroll-trigger" href="#experience">Experience</a>
+              <a className="nav-link js-scroll-trigger" onClick={() => this.handleClick()} href="#experience">Experience</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link js-scroll-trigger" href="#education">Education</a>
+              <a className="nav-link js-scroll-trigger" onClick={() => this.handleClick()} href="#education">Education</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link js-scroll-trigger" href="#skills">Skills</a>
+              <a className="nav-link js-scroll-trigger" onClick={() => this.handleClick()} href="#skills">Skills</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link js-scroll-trigger" href="#interests">Interests</a>
+              <a className="nav-link js-scroll-trigger" onClick={() => this.handleClick()} href="#interests">Interests</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link js-scroll-trigger" href="#awards">Courses</a>
+              <a className="nav-link js-scroll-trigger" onClick={() => this.handleClick()} href="#awards">Courses</a>
             </li>
           </ul>
         </div>

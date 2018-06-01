@@ -1,3 +1,4 @@
+
 export const firebaseEnv = {
   "apiKey": "",
   "authDomain": "",
@@ -9,4 +10,8 @@ export const firebaseEnv = {
 export const gitHubEnv = {
   "url": "https://api.github.com/users",
   "user": "",
+}
+
+export const uiGA = {
+  "code": "UA-XXXXXXXXXX",
 }

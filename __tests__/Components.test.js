@@ -1,6 +1,6 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import Enzyme, { shallow, mount, render } from 'enzyme';
+import Enzyme, { shallow } from 'enzyme';
 import configureMockStore from 'redux-mock-store';
 import Adapter from 'enzyme-adapter-react-16';
 import Section from '../src/common/template/Section';
@@ -45,34 +45,21 @@ describe('Components Render', () => {
       expect(wrapper.length).toEqual(1);
     });
 
-    // it('Should render NavBar props', () => {
-    //   console.log(wrapper);
-    //   const t = render(wrapper({ getGitHubData: {} }));
-    //   expect(hasItem(t, {})).toBe(true);
-    // });
-
-    // it('Should contains NavBar component', () => {
-    //   expect(wrapper.contains([<NavBar />])).toEqual(true);
-    // });
-
-    // it('Should contains Content component', () => {
-    //   expect(wrapper.contains([<Content />])).toEqual(true);
-    // });
   });
 
-  // describe('Section', () => {
-  //   let wrapper;
+  describe('Section', () => {
+    let wrapper;
 
-  //   beforeEach(() => {
-  //     wrapper = shallow(<Section />);
-  //   });
+    beforeEach(() => {
+      wrapper = shallow(<Section />);
+    });
 
-  //   it('Should be render Section component', () => {
-  //     expect(wrapper.length).toEqual(1);
-  //   });
+    it('Should be render Section component', () => {
+      expect(wrapper.length).toEqual(1);
+    });
 
-  //   it('Should contains section html element', () => {
-  //     expect(wrapper.find('section')).toHaveLength(1);
-  //   });
-  // });
+    it('Should contains section html element', () => {
+      expect(wrapper.find('section')).toHaveLength(1);
+    });
+  });
 });

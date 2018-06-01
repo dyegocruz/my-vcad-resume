@@ -12,7 +12,7 @@ import '../../assets/scss/app.scss';
 import Container from '../components/Container';
 
 // initialize Google Analytics
-ReactGA.initialize(uiGA);
+ReactGA.initialize(uiGA.code);
 
 function fireTracking() {
   ReactGA.pageview(window.location.hash);

@@ -38,15 +38,16 @@ $ npm run build
 
 ### JavaScript
 
--  [React](http://facebook.github.io/react) is used for UI.
+- [React](http://facebook.github.io/react) is used for UI.
 - [jQuery](https://jquery.com/) is used for support on effects scroll with [jQuery-easing](https://jqueryui.com/easing/).
--  [ESLint](https://eslint.org/) is used to provide a pluggable linting utility for JavaScript.
+- [ESLint](https://eslint.org/) is used to provide a pluggable linting utility for JavaScript.
 - [Jest](https://facebook.github.io/jest/) is used to javascript and React tests.
--  [Firebase](https://firebase.google.com/?hl=pt-br) is used to store data to can get used for front-end apps.
+- [Firebase](https://firebase.google.com/?hl=pt-br) is used to store data to can get used for front-end apps.
 
-### CSS
+### TEMPLATE
 
--  [Sass](https://sass-lang.com/) is used to describe the style of a document cleanly and structurally, with more power than flat CSS allows.
+- [startbootstrap-resume] - A Bootstrap 4 resume/CV theme created by Start Bootstrap - (https://startbootstrap.com/template-overviews/resume/).
+- [Sass](https://sass-lang.com/) was used to work with some custom CSS.
 
 ### Static server with Livereload
 

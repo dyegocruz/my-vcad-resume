@@ -46,7 +46,7 @@ $ npm run build
 
 ### TEMPLATE
 
-- [startbootstrap-resume] - A Bootstrap 4 resume/CV theme created by Start Bootstrap - (https://startbootstrap.com/template-overviews/resume/).
+- [startbootstrap-resume](https://startbootstrap.com/template-overviews/resume/) - A Bootstrap 4 resume/CV theme created by Start Bootstrap.
 - [Sass](https://sass-lang.com/) was used to work with some custom CSS.
 
 ### Static server with Livereload
